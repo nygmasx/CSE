@@ -99,3 +99,17 @@ body{
 	background: white;
 	margin-bottom: 3%;
 }
+
+.ajout{
+	align-items: center;
+	font-family: 'Montserrat';
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	background: #dc3545;
+	margin-bottom: 3%;
+}
+
+.ajout a{
+	color: white;
+}

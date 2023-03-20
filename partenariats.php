@@ -34,6 +34,7 @@
 				<th>Texte présentation</th>
 				<th>Lien</th>
 				<th>Action</th>
+				<th><button class="ajout"><a href="">Ajouter un partenaire</a></button></th>
 			</tr>
 		</thead>
 		<tbody>
