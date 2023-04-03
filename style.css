@@ -1,0 +1,97 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+.max-width{
+	max-width: 1300px;
+	padding: 0 80px;
+	margin: auto;
+	margin-left: 30%;
+}
+
+.navbar .logo{
+	width: 40px;
+	position: absolute;
+	top: 16px;
+	right: 40px;
+	cursor: pointer;
+}
+
+.navbar{
+	position: sticky;
+	background: #1B3168;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+	padding: 25px;
+}
+
+.navbar .max-width{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar .menu li a{
+	color: white;
+	margin-left: 20px;
+	font-size: 18px;
+	font-weight: 500;
+	transform: scaleX(0);
+}
+
+.navbar .menu li a:hover{
+	color: #B6A886;
+}
+
+.navbar .menu li{
+	list-style: none;
+	display: inline-block;
+}
+
+
+.home h1{
+	font-family: 'Montserrat', sans-serif;
+	color: #1B3168;
+	text-align: center;
+	margin-top: 2%;
+}
+
+.home .boardcard{
+	position: absolute;
+	width: 75%;
+	height: 50%;
+	margin-top: 5%;
+	margin-left: 12.5%;
+	border: solid;
+	border-radius: 10px;
+	border-color: #B6A886;
+	
+
+}
+
+.home .boardcard h2{
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	margin-top: 1%;
+	color: #1B3168;
+}
+
+
+.home .boardcard h3{
+	text-align: center;
+}
+
+.home .boardcard p{
+	margin-top: 1%;
+	margin-left: 1%;
+	margin-right: 1%;
+	text-align: center;
+	font-size: 18px;
+}
