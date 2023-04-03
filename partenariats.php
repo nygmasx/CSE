@@ -7,6 +7,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<title>Partenariats | Lycée Saint Vincent</title>
 </head>
+
+
+
 <body>
 
 
@@ -34,31 +37,65 @@
 				<th>Texte présentation</th>
 				<th>Lien</th>
 				<th>Action</th>
-				<th><button class="ajout"><a href="">Ajouter un partenaire</a></button></th>
+				<th><button class="ajout"><a href="ajout.php">Ajouter un partenaire</a></button></th>
 			</tr>
 		</thead>
 		<tbody>
+        <?php
+        require_once "db.php";
+        $sql = "SELECT * FROM `partenaire`";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+        $partenaires = $statement->fetchAll();
+        foreach ($partenaires as $partenaire){
+
+        ?>
 			<tr>
-				<td><b>Nodevo</b></td>
-				<td>Découvrez les remises</td>
-				<td><a class="link-primary" href="https://www.chanel.com/fr/parfums/">Découvrir</a></td>
-				<td><button class="modif"><a href="">Modifier</a></button><button class="supp"><a href="">Supprimer</a></button></td>
+				<td class="nom"><b><?php echo $partenaire['Nom_Partenaire']; ?></b></td>
+				<td><?php echo $partenaire['Description_Partenaire']; ?></td>
+				<td><a class="link-primary" href="<?php echo $partenaire['Lien_Partenaire']; ?>">Découvrir</a></td>
+				<td class="button"><button class="modif"><a href="update.php">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
 			</tr>
-			<tr>
-				<td><b>MozartsDuWeb</b></td>
-				<td>Offres exceptionnelles</td>
-				<td><a class="link-primary" href="https://www.peugeot.fr">Découvrir</a></td>
-				<td><button class="modif"><a href="">Modifier</a></button><button class="supp"><a href="">Supprimer</a></button></td>
-			</tr>
-			<tr>
-				<td><b>MentalWorks</b></td>
-				<td>Offres exceptionnelles sur vos places de cinéma</td>
-				<td><a class="link-primary" href="https://www.pathe.com">Découvrir</a></td>
-				<td><button class="modif"><a href="">Modifier</a></button><button class="supp"><a href="">Supprimer</a></button></td>
-			</tr>
+        <?php  }
+        ?>
 		</tbody>
 	</table>
 	</div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Confirmer la suppression ?</h2>
+            <p>Êtes-vous sûr de vouloir supprimer ce partenaire ?</p>
+            <div class="modal-buttons">
+                <button id="confirmBtn">Confirmer</button>
+                <button id="cancelBtn">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    	const deleteBtns = document.querySelectorAll('.supp a');
+		const confirmModal = document.getElementById('confirmModal');
+		const confirmBtn = document.getElementById('confirmBtn');
+		const cancelBtn = document.getElementById('cancelBtn');
+		let deleteUrl;
+
+		deleteBtns.forEach((btn) => {
+		  btn.addEventListener('click', (event) => {
+		    event.preventDefault();
+		    deleteUrl = btn.getAttribute('href');
+		    confirmModal.style.display = 'block';
+		  });
+		});
+
+		cancelBtn.addEventListener('click', () => {
+		  confirmModal.style.display = 'none';
+		});
+
+		confirmBtn.addEventListener('click', () => {
+		  window.location.href = deleteUrl;
+		});
+    </script>
 
 
 </body>
