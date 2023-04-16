@@ -1,0 +1,191 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.max-width{
+	max-width: 1300px;
+	padding: 0 80px;
+	margin: auto;
+}
+
+.navbar .logo{
+	width: 40px;
+	position: absolute;
+	top: 16px;
+	right: 40px;
+	cursor: pointer;
+}
+
+.navbar{
+	position: sticky;
+	background: #1B3168;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+	padding: 25px;
+	display: flex;
+	justify-content: center;
+}
+
+.navbar .max-width{
+	display: flex;
+	justify-content: center;
+}
+
+
+.navbar .menu li a{
+	color: white;
+	margin-left: 20px;
+	font-size: 18px;
+	font-weight: 500;
+	transform: scaleX(0);
+}
+
+.navbar .menu li a:hover{
+	color: #B6A886;
+}
+
+.navbar .menu li{
+	list-style: none;
+	display: inline-block;
+}
+
+.content{
+	width: 100%;
+	position: absolute;
+}
+
+.content h1{
+	text-align: center;
+	margin-top: 2%;
+	color: #1B3168;
+}
+
+
+.table{
+	margin-top: 3%;
+	margin-left: 15%;
+	width: 70%;
+	align-items: center;
+	border: solid;
+	background: #EFEDED;
+}
+
+.table th{
+	background: #1B3168;
+	color: white;
+}
+
+.table tr{
+	width: 100%;
+	height: 60px;
+}
+
+.nom{
+	position: relative;
+	left: 1%;
+}
+
+.modif{
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	background: #1B3168;
+	margin-bottom: 3%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.modif a{
+	color: white;
+}
+
+.supp{
+	font-family: 'Montserrat';
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	background: white;
+	margin-bottom: 3%;
+}
+
+.supp a{
+	color: black;
+}
+
+.ajout{
+	align-items: center;
+	font-family: 'Montserrat';
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	background: #dc3545;
+	margin-bottom: 3%;
+}
+
+.ajout a{
+	color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  background: #EFEDED;
+  left: 30%;
+  top: 30%;
+  border: solid;
+  border-radius: 20px;
+}
+
+.modal h2{
+	text-align: center;
+	margin-top: 5%;
+}
+
+.modal p{
+	text-align: center;
+	margin-top: 10%;
+}
+
+.modal-buttons{
+	display: flex;
+	justify-content: center;
+	margin-top: 15%;
+
+}
+
+#confirmBtn{
+	width: 30%;
+    height: 50px;
+    margin-right: 15%;
+    background: #B6A886;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#cancelBtn{
+	width: 30%;
+	height: 50px;
+	border-radius: 10px;
+	border-style: none;
+	cursor: pointer;
+	border-radius: 10px;
+	background: #DC3545;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
