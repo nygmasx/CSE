@@ -15,8 +15,6 @@ include "db.php";?>
 				<th>Date Début Offre</th>
 				<th>Date Fin Offre</th>
 				<th>Nb Places Min. Offre</th>
-				<th>Nb Places Max. Offre</th>
-				<th>Date Fin Offre</th>
 				<th>Action</th>
 				<th>Image</th>
 				<th><button class="ajout"><a href="ajout.php">Ajouter une Offre</a></button></th>
@@ -35,13 +33,10 @@ include "db.php";?>
 			<tr>
 				<td class="nom"><b><?=$offre['Nom_Offre']; ?></b></td>
 				<td><?=$offre['Description_Offre'];?></td>
-				<td><a class="link-primary" href="<?=$offre['Date_Debut_Offre']; ?>">Découvrir</a></td>
-				<td class="button"><button class="modif"><a href="update.php?id=<?= $offre['Date_Fin_Offre']?>">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
-				<td><?=$offre['Description_Offre'];?></td>
-				<td><?=$offre['Description_Offre'];?></td>
-				<td><?=$offre['Description_Offre'];?></td>
-				<td><?=$offre['Description_Offre'];?></td>a href="update.php?id=<?= $offre['Date_Fin_Offre']?>">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
-				<td><?=$offre['Description_Offre'];?></td>
+				<td><?=$offre['Date_Debut_Offre'];?></td>
+				<td><?=$offre['Date_Fin_Offre'];?></td>
+				<td><?=$offre['Nombre_Place_Min_Offre'];?></td>
+                <td class="button"><button class="modif"></td><a href="update.php?id=<?= $offre['Id_Offre']?>">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
 				<td><img src="assets/<?php echo $offre['Nom_Image'];?>"</td>
 			</tr>
         <?php  }
