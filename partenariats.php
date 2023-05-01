@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html>
+<?php include "header.php";
+include "db.php";?>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="stylez.css">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-	<title>Partenariats | Lycée Saint Vincent</title>
+    <link rel="stylesheet" type="text/css" href="stylez.css">
 </head>
-
-
-
-<body>
-
-
-	<nav class="navbar">
-		<div class="max-width">
-			<ul class="menu">
-				<li><a href="backoffice.php">Accueil</a></li>
-				<li><a href="partenariats.php">Partenariats</a></li>
-				<li><a href="">Billeterie</a></li>
-				<li><a href="">Contact</a></li>
-			</ul>
-			</div>
-		</div>
-		<img class="logo" src="utilisateur.png" alt="user">
-	</nav>
-
-
 	<div class="content">
 		<h1>Liste des partenaires</h1>
 
@@ -37,6 +14,7 @@
 				<th>Texte présentation</th>
 				<th>Lien</th>
 				<th>Action</th>
+				<th>Image</th>
 				<th><button class="ajout"><a href="ajout.php">Ajouter un partenaire</a></button></th>
 			</tr>
 		</thead>
@@ -48,13 +26,18 @@
         $statement->execute();
         $partenaires = $statement->fetchAll();
         foreach ($partenaires as $partenaire){
+            $id_image = $partenaire['Id_Image'];
+              $sql2 = $pdo->prepare("SELECT * FROM `image` WHERE `Id_Image` = ?");
+              $sql2->execute([$id_image]);
+              $data = $sql2->fetch();
 
         ?>
 			<tr>
-				<td class="nom"><b><?php echo $partenaire['Nom_Partenaire']; ?></b></td>
-				<td><?php echo $partenaire['Description_Partenaire']; ?></td>
-				<td><a class="link-primary" href="<?php echo $partenaire['Lien_Partenaire']; ?>">Découvrir</a></td>
-				<td class="button"><button class="modif"><a href="update.php">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
+				<td class="nom"><b><?=$partenaire['Nom_Partenaire']; ?></b></td>
+				<td><?=$partenaire['Description_Partenaire'];?></td>
+				<td><a class="link-primary" href="<?=$partenaire['Lien_Partenaire']; ?>">Découvrir</a></td>
+				<td class="button"><button class="modif"><a href="update.php?id=<?= $partenaire['Id_Partenaire']?>">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
+				<td><img style="max-height: 100px; max-width: 50px;" src="assets/<?php echo $data['Nom_Image'];?>"</td>
 			</tr>
         <?php  }
         ?>
@@ -99,4 +82,4 @@
 
 
 </body>
-</html> 
+</html>

@@ -1,49 +1,71 @@
 <?php
-require("db.php");
-if (isset($_POST["submit"])) {
-    $email = htmlspecialchars($_POST["email"]);
-    $password = htmlspecialchars($_POST["password"]);
 
-    if (empty($email) || empty($password)) {
-        echo "Veuillez remplir tous les champs.";
+
+include "header.php";
+include "db.php";
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    //check if email exist
+    $sql = "SELECT * FROM `utilisateur` WHERE `Email_Utilisateur` = :email";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam('email',$email);
+    $statement->execute();
+    $user = $statement->fetch(PDO::FETCH_OBJ);
+    if (!$user) {
+        ?>
+        <script>
+            alert("n'existe pas")
+        </script>
+        <?php
     } else {
-        $sql = $pdo->prepare("SELECT * FROM utilisateur WHERE Email_Utilisateur = :email");
-        $sql->execute(['email' => $email]);
-        $user = $sql->fetch();
-        if ($user && password_verify($password, $user['Password_Utilisateur'])) {
-            $_SESSION["email"] = $email;
-            $_SESSION["id"] = $user["Id_Utilisateur"];
-            header('Location: backoffice.php');
-            exit();
+        //select data and verify password bcrypt select Email_Utilisateur Password_Utilisateur
+        $sql = "SELECT * FROM `utilisateur` WHERE `Email_Utilisateur` = :email";
+        $statement = $pdo->prepare($sql);
+        $statement->bindParam('email',$email);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_OBJ);
+        if ($user) {
+            var_dump($password , $user->Password_Utilisateur);
+            if (password_verify($password, $user->Password_Utilisateur)) {
+
+                $_SESSION['user'] = $user;
+                if ( $user->Id_Droit > 1 ){
+                    $_SESSION['admin'] = true;
+                }
+                header("Location: backoffice.php");
+            } else {
+                ?>
+                <script>
+                    alert("Mot de passe incorrect")
+                </script>
+                <?php
+            }
         } else {
-            echo "Erreur de connexion.";
+            ?>
+            <script>
+                alert("Utilisateur introuvable")
+            </script>
+            <?php
         }
     }
 }
+
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion Administrateurs</title>
-</head>
-<body>
-    <div class="form">
-        <form action="" method="post">
-            <fieldset>
-                <legend>Connexion</legend>
-                <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Email"> <br>
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" placeholder="Mot de passe">
-                <input type="submit" name="submit" value="Connectez-vous"/>
-            </fieldset>
-        </form>
-    </div>
+<div class="form">
+    <form method = "post">
+        <fieldset>
+            <legend>S'inscrire</legend>
+            <label for="email">Email</label>
+            <input type="text" name = "email" placeholder = "Email"> <br>
+            <label for="password">Mot de passe</label>
+            <input type="password" name = "password" placeholder = "Mot de passe">
+            <input type="submit" value = "sinscrire"/>
+        </fieldset>
+    </form>
+</div>
 </body>
 </html>

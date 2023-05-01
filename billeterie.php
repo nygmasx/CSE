@@ -4,6 +4,7 @@ include "db.php";?>
 <head>
     <link rel="stylesheet" type="text/css" href="stylez.css">
 </head>
+<main>
 	<div class="content">
 		<h1>Liste des Offres</h1>
 
@@ -79,7 +80,7 @@ include "db.php";?>
 		  window.location.href = deleteUrl;
 		});
     </script>
-
+</main>
 
 </body>
 </html>

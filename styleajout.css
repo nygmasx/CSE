@@ -9,18 +9,16 @@ body{
 	font-family: 'Montserrat', sans-serif;
 }
 
+
 h1{
 	margin-left: 12%;
 	margin-top: 1%;
 }
 
-
-
 .max-width{
 	max-width: 1300px;
 	padding: 0 80px;
 	margin: auto;
-	margin-left: 30%;
 }
 
 .navbar .logo{
@@ -37,12 +35,13 @@ h1{
 	width: 100%;
 	font-family: 'Montserrat', sans-serif;
 	padding: 25px;
+	display: flex;
+	justify-content: center;
 }
 
 .navbar .max-width{
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .navbar .menu li a{
@@ -93,6 +92,7 @@ label{
 	width: 40%;
 	height: 35px;
 	border-radius: 0.375rem;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .description{
