@@ -2,7 +2,7 @@
 include "db.php";?>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="stylez.css">
+    <link rel="stylesheet" type="text/css" href="stylepartenaire.css">
 </head>
 	<div class="content">
 		<h1>Liste des partenaires</h1>

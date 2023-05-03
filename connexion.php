@@ -30,7 +30,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         if ($user) {
             var_dump($password , $user->Password_Utilisateur);
             if (password_verify($password, $user->Password_Utilisateur)) {
-
+                $user = [
+                    'login' => $statement['Email_Utilisateur'],
+                    'nom' => $statement['Nom_Utilisateur'],
+                    'prenom' => $statement['Prenom_Utilisateur']
+                ];
                 $_SESSION['user'] = $user;
                 if ( $user->Id_Droit > 1 ){
                     $_SESSION['admin'] = true;
@@ -54,17 +58,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 }
 
 ?>
-
 <div class="form">
-    <form method = "post">
-        <fieldset>
-            <legend>S'inscrire</legend>
-            <label for="email">Email</label>
-            <input type="text" name = "email" placeholder = "Email"> <br>
-            <label for="password">Mot de passe</label>
-            <input type="password" name = "password" placeholder = "Mot de passe">
-            <input type="submit" value = "sinscrire"/>
-        </fieldset>
+    <form method="post">
+        <div class="formGroup">
+            <h1 class="formTitle">Connexion</h1>
+            <div class="inputGroup">
+                <input type="email" id="email" required="" name="email" placeholder="Email">
+
+            </div>
+            <div class="inputGroup">
+                <input type="password" id="password" required="" name="password" placeholder="Mot de passe">
+            </div>
+            <div class="btnGroup">
+                <button type="submit">Se connecter</button>
+            </div>
+        </div>
     </form>
 </div>
 </body>

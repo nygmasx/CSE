@@ -60,9 +60,8 @@ if (isset($_POST['submit'])) {
         <ul class="menu">
             <li><a href="backoffice.php">Accueil</a></li>
             <li><a href="partenariats.php">Partenariats</a></li>
-            <li><a href="billeterie.php">Billeterie</a></li>
-            <li><a href="commentaires.php">Contact</a></li>
-            <li><a href="administrateurs.php">Administrateurs</a></li>
+            <li><a href="">Billeterie</a></li>
+            <li><a href="">Contact</a></li>
         </ul>
     </div>
     </div>
@@ -70,27 +69,33 @@ if (isset($_POST['submit'])) {
 </nav>
 
 <div class="ajout">
-    <h1>Ajouter un partenaire</h1>
+    <h1>Ajouter un administrateur</h1>
 
     <div class="form">
-        <form action="ajout.php" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="ligne">
                 <label for="exampleFormControlInput1" class="form-label">Nom</label> <br>
                 <input type="text" class="nom" id="exampleFormControlInput1 " name="nom">
             </div>
+
+            <div class="ligne">
+                <label for="exampleFormControlInput1" class="form-label">Prénom</label> <br>
+                <input type="text" class="prenom" id="exampleFormControlInput1 " name="prenom">
+            </div>
+
             <div class="ligne">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label> <br>
-                <textarea class="description" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                <input type="email" class="email" name = "email">
             </div>
+            
             <div class="ligne">
-                <label for="exampleFormControlInput1" class="form-label">Lien</label> <br>
-                <input type="url" class="lien" id="exampleFormControlInput1" placeholder="https://"
-                       name="lien">
+                <label for="exampleFormControlInput1" class="form-label">Mot de passe</label> <br>
+                <input type="password" class="password" id="exampleFormControlInput1">
             </div>
 
             <div class="ligne">
                 <label for="exampleFormControlInput1" class="form-label">Image</label> <br>
-                <input type="file" class="image" id="exampleFormControlInput1" name="image">
+                <select name="role" id=""></select>
             </div>
 
             <div class="submit">

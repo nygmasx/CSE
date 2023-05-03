@@ -1,55 +1,56 @@
+
 <?php
 include "header.php";
 ?>
 <head>
-    <link rel="stylesheet" type="text/css" href="stylemessage.css">
+    <link rel="stylesheet" type="text/css" href="styleadmin.css">
 </head>
 <main>
     <div class="content">
         <div class="title">
-            <h1>Tous les messages</h1>
+            <h1>Liste des administrateurs</h1>
         </div>
         <div class="tablemessages">
             <table class="table">
                 <thead>
 
                 <tr>
-                    <th class="tableNom">Nom Prénom</th>
+                    <th class="tableNom">Nom Utilisateur</th>
+                    <th class="tablePrenom">Prenom Utilisateur</th>
                     <th class="tableEmail">Email</th>
-                    <th class="tableContenu">Contenu</th>
-                    <th class="tableOffre">Offre associée</th>
-                    <th class="tablePart">Partenaire associé</th>
+                    <th class="tableRole">Rôle</th>
                     <th class="tableAction">Action</th>
+                    <th><button class="ajout"><a href="register.php">Ajouter un administrateur</a></button></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
                 require_once "db.php";
-                $sql = "SELECT * FROM `message`";
+                $sql = "SELECT * FROM `utilisateur`";
                 $statement = $pdo->prepare($sql);
                 $statement->execute();
-                $messages = $statement->fetchAll();
-                foreach ($messages as $message){
-
-                    $sql = "SELECT * FROM `offre` WHERE `Id_Offre` = ?";
-                    $statement = $pdo->prepare($sql);
-                    $statement->execute([$message['Id_Offre']]);
-                    $offre = $statement->fetch();
-
-                    $sql = "SELECT * FROM `partenaire` WHERE `Id_Partenaire` = ?";
-                    $statement = $pdo->prepare($sql);
-                    $statement->execute([$message['Id_Partenaire']]);
-                    $partenaire = $statement->fetch();
-
+                $admins = $statement->fetchAll();
+                foreach ($admins as $admin){
+                    switch ($admin['Id_Droit']) {
+                        case 1 :
+                            $user = 'utilisateur';
+                            break;
+                        case 2 :
+                            $user = 'administrateur';
+                            break;
+                        case 3 :
+                            $user = 'superadmin';
+                            break;
+                    }
                 ?>
                 <tr>
-                    <td data-title="Nom Prénom"><?=$message['Nom_Message'] . " " . $message['Prenom_Message']; ?></td>
-                    <td data-title="Email"><a href="mailto:"><?=$message['Email_Message'];?></a></td>
-                    <td data-title="Contenu" class="colonneContenu"><?=$message['Contenu_Message'];?></td>
-                    <td data-title="Offre"><?php echo $offre['Nom_Offre'] ?? "Aucun";?></td>
-                    <td data-title="Partenaire"><?=$partenaire['Nom_Partenaire'] ?? "Aucun";?></td>
+                    <td data-title="Nom "><?=$admin['Nom_Utilisateur']; ?></td>
+                    <td data-title="Prénom"><?=$admin['Prenom_Utilisateur'];?></a></td>
+                    <td data-title="Email" class="colonneContenu"><a href="mailto:"><?=$admin['Email_Utilisateur'];?></td>
+                    <td data-title="Role"><?=$user;?></td>
                     <td data-title="Action" class="actionBtn">
-                        <button class="supp"><a href="delete_commentaires.php?id=<?php echo $message['Id_Message']; ?>">Supprimer</a></button>
+                        <button class="supp"><a href="">Supprimer</a></button>
+                        <button class="modif"><a href="update_admin.php">Modifier</a></button>
                     </td>
                 </tr>
                 <?php }
@@ -61,7 +62,7 @@ include "header.php";
     <div id="confirmModal" class="modal">
         <div class="modal-content">
             <h2>Confirmer la suppression ?</h2>
-            <p>Êtes-vous sûr de vouloir supprimer ce message ?</p>
+            <p>Êtes-vous sûr de vouloir supprimer cet administrateur ?</p>
             <div class="modal-buttons">
                 <button id="confirmBtn">Confirmer</button>
                 <button id="cancelBtn">Annuler</button>

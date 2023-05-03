@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-    include 'header.php';
+
     //Connexion PDO
     require 'db.php';
 
@@ -51,38 +51,55 @@ error_reporting(E_ALL);
 
 <head>
     <link rel="stylesheet" type="text/css" href="styleajout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<h1>Modifier un partenaire</h1>
+<nav class="navbar">
+    <div class="max-width">
+        <ul class="menu">
+        <li><a href="backoffice.php">Accueil</a></li>
+            <li><a href="partenariats.php">Partenariats</a></li>
+            <li><a href="billeterie.php">Billeterie</a></li>
+            <li><a href="commentaires.php">Contact</a></li>
+            <li><a href="administrateurs.php">Administrateurs</a></li>
+        </ul>
+    </div>
+    </div>
+    <img class="logo" src="utilisateur.png" alt="user">
+</nav>
+<div class="ajout">
+    <h1>Modifier un partenaire</h1>
 
-<div class="form">
-    <form action="update.php" method="post" enctype="multipart/form-data">
-        <input type="hidden"  value="<?= $_GET['id'] ?? null ?>" name="id">
+    <div class="form">
+        <form action="update.php" method="post" enctype="multipart/form-data">
+            <input type="hidden"  value="<?= $_GET['id'] ?? null ?>" name="id">
 
-        <div class="ligne">
-            <label for="exampleFormControlInput1" class="form-label">Nom</label> <br>
-            <input type="text" class="nom" id="exampleFormControlInput1" value="<?= $data['Nom_Partenaire'];?>" name="nom">
-        </div>
-        <div class="ligne">
-            <label for="exampleFormControlTextarea1" class="form-label">Description</label> <br>
-            <input class="description" id="exampleFormControlTextarea1" rows="3" value="<?= $data['Description_Partenaire'];?>" name="description" type="text"></input>
-        </div>
-        <div class="ligne">
-            <label for="exampleFormControlInput1" class="form-label">Lien</label> <br>
-            <input type="url" class="lien" value="<?=$data['Lien_Partenaire'];?>" id="exampleFormControlInput1" placeholder="https://"
-                   name="lien">
-        </div>
+            <div class="ligne">
+                <label for="exampleFormControlInput1" class="form-label">Nom</label> <br>
+                <input type="text" class="nom" id="exampleFormControlInput1" value="<?= $data['Nom_Partenaire'];?>" name="nom">
+            </div>
+            <div class="ligne">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label> <br>
+                <input class="description" id="exampleFormControlTextarea1" rows="3" value="<?= $data['Description_Partenaire'];?>" name="description" type="text"></input>
+            </div>
+            <div class="ligne">
+                <label for="exampleFormControlInput1" class="form-label">Lien</label> <br>
+                <input type="url" class="lien" value="<?=$data['Lien_Partenaire'];?>" id="exampleFormControlInput1" placeholder="https://"
+                       name="lien">
+            </div>
 
-        <div class="ligne">
-            <label for="exampleFormControlInput1" class="form-label">Image</label> <br>
-            <input type="file" class="image" value="<?php echo $nom_Image['Nom_Image'] ;?>" id="exampleFormControlInput1" name="image">
-        </div>
+            <div class="ligne">
+                <label for="exampleFormControlInput1" class="form-label">Image</label> <br>
+                <input type="file" class="image" value="<?php echo $nom_Image['Nom_Image'] ;?>" id="exampleFormControlInput1" name="image">
+            </div>
 
-        <div class="submit">
-            <a href="#"><button type="submit" class="btn btn-primary me-md-2" value="submit" name="submit">Modifier</button></a>
-        </div>
-    </form>
+            <div class="submit">
+                <a href="#"><button type="submit" class="btn btn-primary me-md-2" value="submit" name="submit">Modifier</button></a>
+            </div>
+        </form>
+    </div>
+
 </div>
 
 <div id="confirmModal" class="modal">

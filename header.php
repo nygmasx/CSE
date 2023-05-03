@@ -33,7 +33,8 @@ if (empty($_SESSION['admin']) && $end_url != 'connexion.php'){
             <li><a href="backoffice.php">Accueil</a></li>
             <li><a href="partenariats.php">Partenariats</a></li>
             <li><a href="billeterie.php">Billeterie</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="commentaires.php">Contact</a></li>
+            <li><a href="administrateurs.php">Administrateurs</a></li>
         </ul>
         <?php }  else {?>
         <ul class="menu">
