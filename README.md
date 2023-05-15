@@ -1,4 +1,4 @@
-# Projet CSE du Lycée Saint Vincent de Senlis par SALLAK Imrane
+# Projet CSE du Lycée Saint Vincent de Senlis par SALLAK Imrane, CHAHID Nourdyne, PERUCHO Rafael
 ## Stack Technique : PHP / SQL / Javascript
 
 Application pour la gestion du CSE du lycée saint vincent. Cette application permet de gérer les différentes offres du CSE. Le CSE dispose d'une partie partenaire qui lui permet de présenter ses différents partenaires. L'application permet au CSE de Saint Vincent de gérer ses données depuis une page d'administration disponible depuis le backoffice ce qui rend le CSE autonome sur la gestion de ses données.
