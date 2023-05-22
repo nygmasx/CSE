@@ -3,10 +3,10 @@
 <section class="info">
     <div class="accueil">
         <div class="homelogo">
-        <img src="img/page-daccueil.png" alt="icone d'accueil">
+        <img src="assets/img/page-daccueil.png" alt="icone d'accueil">
         </div>
         <div class="arrow">
-            <img src="img/chevron.png" alt="icone de chevron">
+            <img src="assets/img/chevron.png" alt="icone de chevron">
         </div>
         <h3><a href="index.php"> Accueil </a></h3>
     </div>
@@ -18,12 +18,12 @@
     </div>
 
     <div class="raccourci1">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <a href="index.php">Accueil</a>
     </div>
 
     <div class="raccourci2">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <a href="contact.php">Nous contacter</a>
     </div>
 
@@ -33,18 +33,18 @@
       <h2>Informations de contact</h2>
     </div>
     <div class="info1">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <p>Par téléphone : <span>+33303030303</span></p>
     </div>
 
     <div class="info2">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <p>Par email : <span>cse@lyceestvincent.fr</span>
       <p>
     </div>
 
     <div class="info3">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <p>Au lycée : <span> Bureau du CSE <br>(1er étage bâtiment Saint-Vincent)</span></p>
     </div>
 
@@ -55,11 +55,11 @@
     </div>
     <div class="partenaires">
       <div class="leftarrow">
-        <img src="img/chevron.png" alt="icone de flèche de gauche">
+        <img src="assets/img/chevron.png" alt="icone de flèche de gauche">
       </div>
-      <img src="img/leonidas.png" alt="logo de Leonidas">
+      <img src="assets/img/leonidas.png" alt="logo de Leonidas">
       <div class="rightarrow">
-        <img src="img/chevron.png" alt="icone de flèche de droite">
+        <img src="assets/img/chevron.png" alt="icone de flèche de droite">
       </div>
     </div>
     <div class="discover">

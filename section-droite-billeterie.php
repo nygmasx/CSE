@@ -38,7 +38,7 @@
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
         </div>
       </div>
       
@@ -57,7 +57,7 @@
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
         </div>
       </div>
       
@@ -76,7 +76,7 @@
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
         </div>
       </div>
       
@@ -95,7 +95,7 @@
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
         </div>
       </div>
 

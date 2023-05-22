@@ -13,7 +13,7 @@
 </div>
 
     <div class="fond_logo">
-    <img src="img/logosv.png" alt="Logo du lycée Saint Vincent">
+    <img src="assets/img/logosv.png" alt="Logo du lycée Saint Vincent">
 
     </div>
     </section>

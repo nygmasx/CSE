@@ -43,7 +43,7 @@
         </div>
         <div class="en-savoir-plus" data-target="#modal1">
           <p><span>EN SAVOIR PLUS</span></p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
                       <div class="modal" id="modal1">
                           <div class="contenu hidden">
                              <span class="fermer">&times;</span>
@@ -80,7 +80,7 @@
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
         </div>
       </div>
       
@@ -99,7 +99,7 @@
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
-          <img src="img/chevron.png" alt="image de chevron">
+          <img src="assets/img/chevron.png" alt="image de chevron">
         </div>
       </div>
 

@@ -6,10 +6,10 @@
 <section class="info">
     <div class="accueil">
         <div class="homelogo">
-        <img src="img/page-daccueil.png" alt="icone d'accueil">
+        <img src="assets/img/page-daccueil.png" alt="icone d'accueil">
         </div>
         <div class="arrow">
-            <img src="img/chevron.png" alt="icone de chevron">
+            <img src="assets/img/chevron.png" alt="icone de chevron">
         </div>
         <h3> <a href="index.php">Accueil</a></h3>
     </div>
@@ -21,12 +21,12 @@
     </div>
 
     <div class="raccourci1">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <a href="billeterie.php">Offres / Billeterie</a>
     </div>
 
     <div class="raccourci2">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <a href="contact.php">Nous contacter</a>
     </div>
 
@@ -36,16 +36,16 @@
       <h2>Informations de contact</h2>
     </div>
     <div class="info1">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <p>Par téléphone : <a href="tel:+33 3 03 03 03 03"><span>+33303030303</span></a></p>
     </div>
     <div class="info2">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <p> Par mail: <a href="mailto:cse@lyceestvincent.fr"><span>cse@lyceestvincent.fr</span></a> </p>
     </div>
 
     <div class="info3">
-      <img src="img/chevron.png" alt="icone de chevron">
+      <img src="assets/img/chevron.png" alt="icone de chevron">
       <p>Au lycée : <span> Bureau du CSE <br>(1er étage bâtiment Saint-Vincent)</span></p>
     </div>
 
@@ -57,12 +57,12 @@
     <section class="banderole">
     <div class="contenant-slider">
        <div class="slider">
-            <div class="fleche-gauche"><img src="img/chevron.png"></div>
+            <div class="fleche-gauche"><img src="assets/img/chevron.png"></div>
                 <div class="contenant-image-slider">
-                  <img src="img/leonidas.png" class="slide-image 1" alt="">
-                        <img src="img/franprix.jpg" class="slide-image 2" alt="">
+                  <img src="assets/img/leonidas.png" class="slide-image 1" alt="">
+                        <img src="assets/img/franprix.jpg" class="slide-image 2" alt="">
                                     </div>
-                                    <div class="fleche-droite"><img src="img/chevron.png"></div>
+                                    <div class="fleche-droite"><img src="assets/img/chevron.png"></div>
                                 </div>
 
                                 <div class="cont-btn">
