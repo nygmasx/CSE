@@ -8,7 +8,7 @@
 
 <footer>
   <div class="footerimg">
-    <img src="img/logosv.png" alt="Logo du lycée Saint-Vincent">
+    <img src="assets/img/logosv.png" alt="Logo du lycée Saint-Vincent">
   </div>
   <div class="footerinfo">
      <h4> CSE du lycée Saint-Vincent </h4>
