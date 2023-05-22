@@ -7,7 +7,10 @@ include "db.php"; ?>
 <main>
     <div class="content">
         <h1>Liste des Offres</h1>
-
+        <form class="searchbar" method="GET">
+            <input type="text" name="searchbar">
+            <button type="submit" name="Rechercher" title="Envoyer"><img src="img.png" alt=""/></button>
+        </form>
         <table class="table">
             <thead>
             <tr class="table-primary">
@@ -27,6 +30,10 @@ include "db.php"; ?>
             <?php
             require_once "db.php";
             $sql = "SELECT * FROM `offre`";
+            if (isset($_GET['searchbar']) && !empty($_GET['searchbar'])) {
+                $recherche = htmlspecialchars($_GET['searchbar']);
+                $sql .= " WHERE Nom_Offre LIKE '%$recherche%'";
+            }
             $statement = $pdo->prepare($sql);
             $statement->execute();
             $offres = $statement->fetchAll();
