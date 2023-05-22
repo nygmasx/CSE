@@ -38,8 +38,7 @@ if (empty($_SESSION['admin']) && $end_url != 'connexion.php'){
         </ul>
         <?php }  else {?>
         <ul class="menu">
-            <li><a href="register.php">s'inscrire</a></li>
-            <li><a href="connexion.php">se connecter</a></li>
+            <li><a href="connexion.php">Se Connecter</a></li>
         </ul>
         <?php } ?>
     </div>

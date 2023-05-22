@@ -6,7 +6,10 @@ include "db.php";?>
 </head>
 	<div class="content">
 		<h1>Liste des partenaires</h1>
-
+        <form class="searchbar" method="GET">
+            <input type="text" name="searchbar" style="width" placeholder="Tapez le nom du partenaire...">
+            <button type="submit" name="Rechercher" title="Envoyer"><img src="img.png" alt="" style = "width:20px; " /></button>
+        </form>
 		<table class="table">
 		<thead>
 			<tr class="table-primary">
@@ -37,7 +40,7 @@ include "db.php";?>
 				<td><?=$partenaire['Description_Partenaire'];?></td>
 				<td><a class="link-primary" href="<?=$partenaire['Lien_Partenaire']; ?>">Découvrir</a></td>
 				<td class="button"><button class="modif"><a href="update.php?id=<?= $partenaire['Id_Partenaire']?>">Modifier</a></button><button class="supp"><a href="delete.php?id=<?php echo $partenaire['Id_Partenaire']; ?>">Supprimer</a></button></td>
-				<td><img style="max-height: 100px; max-width: 50px;" src="assets/<?php echo $data['Nom_Image'];?>"</td>
+				<td><img style="max-height: 100px; max-width: 50px;" src="assets/<?php echo $data['Nom_Image'];?>"></td>
 			</tr>
         <?php  }
         ?>

@@ -4,12 +4,9 @@ include "header.php";
 
 switch ($_SESSION['user']->Id_Droit) {
     case 1 :
-        $user = 'utilisateur';
-        break;
-    case 2 :
         $user = 'administrateur';
         break;
-    case 3 :
+    case 2 :
         $user = 'superadmin';
         break;
 }
@@ -28,7 +25,7 @@ switch ($_SESSION['user']->Id_Droit) {
             foreach ($utilisateurs as $utilisateur){
             ?>
 			<div class="boardcard">
-				<h2>Bonjour, <span style="color: #B6A886;"><?= $_SESSION['user']->Nom_Utilisateur ?></span></h2> <br><br>
+				<h2>Bonjour, <span style="color: #B6A886;"><?= $_SESSION['user']->Prenom_Utilisateur ?></span></h2> <br><br>
 				<h3>Rôle : <?= $user ?></h3>
 				<br>
 			</div>

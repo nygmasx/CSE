@@ -10,6 +10,10 @@ include "header.php";
         <div class="title">
             <h1>Liste des administrateurs</h1>
         </div>
+        <form class="searchbar" method="GET">
+            <input type="text" name="searchbar" style="width" placeholder="Recherchez un administrateur">
+            <button type="submit" name="Rechercher" title="Envoyer"><img src="img.png" alt="" style = "width:20px; " /></button>
+        </form>
         <div class="tablemessages">
             <table class="table">
                 <thead>
@@ -27,18 +31,20 @@ include "header.php";
                 <?php
                 require_once "db.php";
                 $sql = "SELECT * FROM `utilisateur`";
-                $statement = $pdo->prepare($sql);
-                $statement->execute();
-                $admins = $statement->fetchAll();
+                if (isset($_GET['searchbar']) && !empty($_GET['searchbar'])) {
+                    $recherche = htmlspecialchars($_GET['searchbar']);
+                    $sql .= " WHERE Prenom_Utilisateur OR Nom_Utilisateur LIKE '%$recherche%'";
+                }
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $admins = $stmt->fetchAll();
+                $nbResultats = count($admins);
                 foreach ($admins as $admin){
                     switch ($admin['Id_Droit']) {
                         case 1 :
-                            $user = 'utilisateur';
-                            break;
-                        case 2 :
                             $user = 'administrateur';
                             break;
-                        case 3 :
+                        case 2 :
                             $user = 'superadmin';
                             break;
                     }
@@ -50,10 +56,12 @@ include "header.php";
                     <td data-title="Role"><?=$user;?></td>
                     <td data-title="Action" class="actionBtn">
                         <button class="supp"><a href="">Supprimer</a></button>
-                        <button class="modif"><a href="update_admin.php">Modifier</a></button>
                     </td>
                 </tr>
                 <?php }
+                if($nbResultats == 0){
+                    echo("<p> Votre recherche ne retourne rien. </p>");
+                }
                 ?>
                 </tbody>
             </table>

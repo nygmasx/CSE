@@ -30,13 +30,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         if ($user) {
             var_dump($password , $user->Password_Utilisateur);
             if (password_verify($password, $user->Password_Utilisateur)) {
-                $user = [
+                /*$user = [
                     'login' => $statement['Email_Utilisateur'],
                     'nom' => $statement['Nom_Utilisateur'],
-                    'prenom' => $statement['Prenom_Utilisateur']
-                ];
+                    'prenom' => $statement['Prenom_Utilisateur'],
+                    'mdp' => $statement['Password_Utilisateur']
+                ];*/
                 $_SESSION['user'] = $user;
-                if ( $user->Id_Droit > 1 ){
+                if ( $user->Id_Droit > 0 ){
                     $_SESSION['admin'] = true;
                 }
                 header("Location: backoffice.php");
@@ -47,7 +48,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 </script>
                 <?php
             }
-        } else {
+        }else {
             ?>
             <script>
                 alert("Utilisateur introuvable")

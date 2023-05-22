@@ -9,6 +9,10 @@ include "header.php";
         <div class="title">
             <h1>Tous les messages</h1>
         </div>
+        <form class="searchbar" method="GET">
+            <input type="text" name="searchbar" style="width">
+            <button type="submit" name="Rechercher" title="Envoyer"><img src="img.png" alt="" style = "width:20px; " /></button>
+        </form>
         <div class="tablemessages">
             <table class="table">
                 <thead>

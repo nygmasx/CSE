@@ -51,9 +51,8 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['droit']
                 <label for="password">Mot de passe</label>
                 <label for="droit">droit</label>
                 <select id="droit" name="droit">
-                   <option value="1">utilisateur</option>
-                    <option value="2">administrateur</option>
-                    <option value="3">superadmin</option>
+                    <option value="1">administrateur</option>
+                    <option value="2">superadmin</option>
                 </select>
                 <input type="password" name = "password" placeholder = "Mot de passe">
                 <input type="submit" value = "sinscrire"/>
