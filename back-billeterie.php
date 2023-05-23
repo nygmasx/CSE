@@ -9,7 +9,7 @@ include "db.php"; ?>
         <h1>Liste des Offres</h1>
         <form class="searchbar" method="GET">
             <input type="text" name="searchbar">
-            <button type="submit" name="Rechercher" title="Envoyer"><img src="img.png" alt=""/></button>
+            <button type="submit" name="Rechercher" title="Envoyer"><img src="img.png" alt="" style = "width:20px; "/></button>
         </form>
         <table class="table">
             <thead>
