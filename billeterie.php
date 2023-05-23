@@ -1,9 +1,15 @@
 <?php
 require_once "db.php";
-$sql = "SELECT * FROM `partenaire`";
+$sql = "SELECT * FROM `offre`";
 $statement = $pdo->prepare($sql);
 $statement->execute();
-$partenaires = $statement->fetchAll();
+$offres = $statement->fetchAll();
+foreach ($offres as $offre) {
+    $query = "SELECT * FROM `offre_image` INNER JOIN `image` ON  `offre_image`.Id_Image = `image`.Id_Image  WHERE `offre_image`.Id_Offre = ?";
+    $get_all_image = $pdo->prepare($query);
+    $get_all_image->execute([$offre['Id_Offre']]);
+    $images = $get_all_image->fetchAll();
+}
 ?>
 <!DOCTYPE html>
 <head> 
@@ -17,6 +23,20 @@ $partenaires = $statement->fetchAll();
   
 </head>
 <body>
+
+<?php
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$offres = $statement->fetchAll();
+foreach ($offres as $offre) {
+    $query = "SELECT * FROM `offre_image` INNER JOIN `image` ON  `offre_image`.Id_Image = `image`.Id_Image  WHERE `offre_image`.Id_Offre = ?";
+    $get_all_image = $pdo->prepare($query);
+    $get_all_image->execute([$offre['Id_Offre']]);
+    $images = $get_all_image->fetchAll();
+}
+
+?>
+
     <!-- Header de la page d'accueil -->
 
     <?php

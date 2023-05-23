@@ -31,15 +31,14 @@
       <div class="offre">
         <div class="haut-de-page">
           <div class="btn-offre">
-            <p>OFFRE</p>
+              <p><?= $offre['Nom_Offre']; ?></p>
           </div>
           <div class="date-offre">
-            <p>Publié le 11 décembre 2022</p>
+            <p>Publié le <?= $offre['Date_Debut_Offre'];?></p>
           </div>
         </div>
         <div class="contenu-offre">
-          <p>Profitez de -20% sur une sélection de parfum, en partenariat avec l'enseigne Nocibé de Senlis.Merci de vous
-            rendre au bureau du CSE pour pouvor passer commande</p>
+          <p><?= $offre['Description_Offre'] ?></p>
         </div>
         <div class="en-savoir-plus" data-target="#modal1">
           <p><span>EN SAVOIR PLUS</span></p>
@@ -68,15 +67,14 @@
       <div class="offre">
         <div class="haut-de-page">
           <div class="btn-offre">
-            <p>OFFRE</p>
+            <p><?= $offre['Nom_Offre']; ?></p>
           </div>
           <div class="date-offre">
-            <p>Publié le 09 décembre 2022</p>
+            <p>Publié le <?= $offre['Date_Debut_Offre'];?></p>
           </div>
         </div>
         <div class="contenu-offre">
-          <p>Achetez dès à présent votre sapin de noël en profitant du partenariat entre le lycée Saint-Vincent 
-            et l'association des scouts De l'oise <br>Prix commun à tous : 30€ le petit sapin, 40€ le grand.</p>
+          <p>  <?= $offre['Description_Offre'] ?></p>
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
@@ -87,15 +85,14 @@
       <div class="offre">
         <div class="haut-de-page">
           <div class="btn-offre">
-            <p>OFFRE</p>
+            <p><?= $offre['Nom_Offre']; ?></p>
           </div>
           <div class="date-offre">
-            <p>Publié le 10 novembre 2022 - Jusqu'au 30/01/2023</p>
+          <p>Publié le <?= $offre['Date_Debut_Offre']?> jusqu'au <?= $offre['Date_Fin_Offre']; ?></p>
           </div>
         </div>
         <div class="contenu-offre">
-          <p>Offre négociée au près de Léonidas, profitez de - 10% toute l'année sur l'ensemble des chocolats dans la boutique de Senlis
-            <br>Famille nombreuse (5 enfants et plus) : -5% supplémentaire</p>
+          <p><?= $offre['Description_Offre'] ?></p>
         </div>
         <div class="en-savoir-plus">
           <p>EN SAVOIR PLUS</p>
