@@ -25,7 +25,7 @@
     <!-- Création de la section partenaires -->
 
 
-    <div class="nos-partenaires">
+    <div class="offre-billeterie">
       <h1>Dernières offres de la billeterie</h1>
 
       <?php

@@ -9,7 +9,7 @@
               $sql2 = $pdo->prepare("SELECT * FROM `image` WHERE `Id_Image` = ?");
               $sql2->execute([$id_image]);
               $data = $sql2->fetch();
-
+        }
         ?>
 <?php
 
@@ -26,7 +26,7 @@ if (isset($_GET['Id_Partenaire'])) {
 
   $query = "SELECT * FROM `partenaire` WHERE `Id_Partenaire` = ?";
   $statement = $pdo->prepare($query);
-  $statement->execute([$offre['Id_Partenaire']]);
+  $statement->execute([$partenaire['Id_Partenaire']]);
   $partenaire = $statement->fetch();
    
   ?>
@@ -34,9 +34,9 @@ if (isset($_GET['Id_Partenaire'])) {
   <div class="modal" id="modal1" style="display:flex !important;">
     <div class="contenu hidden">
       <span class="fermer">&times;</span>
-      <h2> <?=$partenaire['Nom_Partenaire']; ?> : <?= $partenaire['Nom_Partenaire']; ?> </h2>
+      <h2> <?= $partenaire['Nom_Partenaire']; ?> </h2>
       <div class="contenumodal">
-
+          
       </div>
       <?php
       if (!empty($images)) {
@@ -49,7 +49,7 @@ if (isset($_GET['Id_Partenaire'])) {
           <p><?= $offre['Description_Offre'] ?></p>
         </div>
             <div class="img-partenaires"> <?php
-            foreach ($images as $img) { ?>
+              foreach ($images as $img) { ?>
               <img src="assets/<?php echo $img['Nom_Image']; ?>" <?= count($images) >1 ? "style='width: calc(100% /".count($images).");'" : "" ?>>
             
             <?php } ?>
@@ -125,6 +125,6 @@ if (isset($_GET['Id_Partenaire'])) {
     include("footer-partenariat.php");
     ?>
 
-  </body>
+</body>
 
 </html>

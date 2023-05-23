@@ -22,7 +22,7 @@
     <!-- Création de la section offre billeterie -->
 
 
-    <div class="offre-billeterie">
+    <div class="partenariat">
       <h1>Voici nos partenaires !</h1>
 
       <?php
@@ -32,7 +32,7 @@
       foreach ($partenaires as $partenaire) {
         $query = "SELECT * FROM `partenaire_image` INNER JOIN `image` ON  `partenaire_image`.Id_Image = `image`.Id_Image  WHERE `partenaire_image`.Id_Offre = ?";
         $get_all_image = $pdo->prepare($query);
-        $get_all_image->execute([$offre['Id_Offre']]);
+        $get_all_image->execute([$partenaire['Id_Partenaire']]);
         $images = $get_all_image->fetchAll();
 
 
@@ -40,19 +40,21 @@
 
 
         <div class="partenaire">
-          <div class="haut-de-page">
-            <div class="btn-offre">
-              <p><?= $offre['Nom_Offre']; ?></p>
+            <div class="image-partenaire">
+
             </div>
-            <div class="date-offre">
-              <p>Offre valable du <?= $offre['Date_Debut_Offre']; ?> au <?= $offre['Date_Fin_Offre']; ?> </p>
-            </div>
+
+            <div class="info-partenaire">
+                 <div class="nom-partenaire">  
+                    <p><?= $partenaire['Nom_Partenaire']; ?> </p>
+                </div>
+                <div class="contenu-partenaire"> contenu offre
+                     <p><?= $partenaire['Description_Partenaire'] ?></p>
+                </div>
           </div>
-          <div class="contenu-offre">
-            <p><?= $offre['Description_Offre'] ?></p>
-          </div>
-          <form action="index.php" method="get">
-            <input type="hidden" name="Idoffre" value="<?= $offre['Id_Offre'] ?>">
+          
+          <form action="partenariat.php" method="get">
+            <input type="hidden" name="Id_Partenaire" value="<?= $partenaire['Id_Partenaire'] ?>">
             <button type="submit" class="en-savoir-plus" data-target="#modal1">
               <p><span>EN SAVOIR PLUS</span></p>
               <img src="assets/img/chevron.png" alt="image de chevron">
