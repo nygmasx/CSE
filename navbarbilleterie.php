@@ -34,7 +34,7 @@
         <a href="billeterie.php"  class="active">
             <li id="billeterie">Billeterie</li>
         </a>
-        <a href="#">
+        <a href="contact.php">
             <li id="contact">Contact</li>
         </a>
         </ul>

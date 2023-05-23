@@ -25,17 +25,17 @@
     <!-- Création des éléments de la navbar -->
     <nav>
         <ul class="navbar_elements">
-        <a href="index.php" class="active">
+        <a href="index.php">
             <li id="accueil">Accueil</li>
         </a>
-        <a href="partenariat.php">
+        <a href="partenariat.php" >
             <li id="partenariat">Partenariat</li>
         </a>
         <a href="billeterie.php">
             <li id="billeterie">Billeterie</li>
         </a>
-        <a href="contact.php">
-            <li id="contact.">Contact</li>
+        <a href="contact.php" class="active">
+            <li id="contact">Contact</li>
         </a>
         </ul>
     </nav>

@@ -41,7 +41,7 @@
 
         <div class="partenaire">
             <div class="image-partenaire">
-
+                
             </div>
 
             <div class="info-partenaire">

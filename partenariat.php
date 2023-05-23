@@ -20,9 +20,9 @@ if (isset($_GET['Id_Partenaire'])) {
   $images = $get_all_image->fetchAll();
   $query = "SELECT * FROM offre WHERE Id_Partenaire = :id ";
   $get_Info = $pdo->prepare($query);
-  $get_Info->bindParam("id", $_GET['IdPartenaire']);
+  $get_Info->bindParam("id", $_GET['Id_Partenaire']);
   $get_Info->execute();
-  $offre = $get_Info->fetch();
+  $partenaire = $get_Info->fetch();
 
   $query = "SELECT * FROM `partenaire` WHERE `Id_Partenaire` = ?";
   $statement = $pdo->prepare($query);
@@ -35,8 +35,8 @@ if (isset($_GET['Id_Partenaire'])) {
     <div class="contenu hidden">
       <span class="fermer">&times;</span>
       <h2> <?= $partenaire['Nom_Partenaire']; ?> </h2>
-      <div class="contenumodal">
-          
+      <div class="contenu-modal">
+
       </div>
       <?php
       if (!empty($images)) {
