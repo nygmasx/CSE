@@ -202,7 +202,7 @@ body{
 
 .fleche-gauche{
     width: 30px;
-    z-index: 100;
+    
 }
 
 .fleche-gauche img{
@@ -212,7 +212,6 @@ body{
 }
 
 .fleche-droite{
-    z-index: 100;
     width: 30px;
 }
 
@@ -570,6 +569,8 @@ body{
     height: 30px;
     cursor:pointer;
     justify-content:right;
+    background:none;
+    border:none;
 }
 
 
@@ -596,6 +597,7 @@ body{
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
+    z-index:10;
   }
   
   /* Modal Content/Box */
@@ -605,15 +607,15 @@ body{
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
-    color:#8156D1;
+    color:black;
     
   }
   
   .contenu img{
-    width: 70%;
-  border: 3px solid #714BB8;
-  border-radius: 6px;
-  cursor:pointer;
+    width: 30%;
+    border: 2px solid #B6A886;
+    border-radius: 6px;
+    cursor:pointer;
   
   }
   
@@ -626,6 +628,13 @@ body{
     width: 60%;
   padding-left: 20px;
   }
+
+  .contenu h2{
+    justify-content: center;
+    align-items:center ;
+    display:flex;
+    padding: 30px;
+  }
   
   
   .fermer{
@@ -637,69 +646,13 @@ body{
   
   .fermer:hover,
   .fermer:focus {
-    color: black;
+    color: red;
     text-decoration: none;
     cursor: pointer;
   } 
 
 
-.offre2{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 875px;
-    height: 199px;
-    background: #EFEDED;
-}
 
-.en-savoir-plus2{
-    display: flex;
-    width: 100%;
-    height: 30px;
-    cursor:pointer;
-    justify-content:right;
-}
-
-.en-savoir-plus2 img{
-    height: 14px;
-    margin-top: 2px;
-    margin-left: 5px;
-}
-
-.en-savoir-plus2 p{
-    font-size:14px;
-}
-
-
-
-.offre3{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 875px;
-    height: 199px;
-    margin-top: 40px;
-    background: #EFEDED;
-
-}
-
-.en-savoir-plus3{
-    display: flex;
-    width: 100%;
-    height: 30px;
-    cursor:pointer;
-    justify-content:right;
-}
-
-.en-savoir-plus3 img{
-    height: 14px;
-    margin-top: 2px;
-    margin-left: 5px;
-}
-
-.en-savoir-plus3 p{
-    font-size:14px;
-}
 
 .btn-offres{
     background: #1B3168;
@@ -756,4 +709,18 @@ footer h4{
 .footerraccourci a{
     text-decoration:none;
     color: #FFFFFF;
+}
+
+
+.description-offre{
+    padding: 20px 20px;
+}
+
+
+.img-partenaires{
+    display: flex;
+    justify-content: left;
+    margin-top: 50px;
+    width: 95%;
+    gap: 10px;
 }
