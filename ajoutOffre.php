@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
                 $sql->execute();
 
             }
-            header("Location: billeterie.php");
+            header("Location: back-billeterie.php");
         }
 
     }
