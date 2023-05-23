@@ -11,6 +11,6 @@ profileImg.addEventListener("click", () => {
 btn.addEventListener("click", function () {
   dropDownMenu.classList.toggle("open");
 });
-main.addEventListener("click", function () {
-  dropDownMenu.classList.remove(".dropdown_menu");
+profileImg.removeEventListener("click", () => {
+  dropdown.style.display = "block";
 });

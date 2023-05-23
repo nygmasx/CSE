@@ -46,5 +46,14 @@ if (empty($_SESSION['admin']) && $end_url != 'connexion.php'){
     <div class="dropdown_menu">
 					<li><a href="logout.php">Deconnexion</a></li>
 	</div>
+    <div class="hamburger">
+            <li><a href="backoffice.php">Accueil</a></li>
+            <li><a href="partenariats.php">Partenariats</a></li>
+            <li><a href="back-billeterie.php">Billeterie</a></li>
+            <li><a href="commentaires.php">Contact</a></li>
+            <li><a href="administrateurs.php">Administrateurs</a></li>
+            <li><a href="logout.php">Déconnexion</a></li>
+    </div>
+    <img src="menu-btn.png" alt="" class ="menuhbg">
 </nav>     
             <script src="script.js"></script>
