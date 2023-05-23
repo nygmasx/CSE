@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
   <link rel="stylesheet" href="style-front-raf.css">
@@ -14,26 +15,22 @@
 
 <body>
 
-<!-- Création de la page de droite -->
-  
-<section class="partie-droite">
-   
+  <!-- Création de la page de droite -->
 
+  <section class="partie-droite">
     
+    <!-- Création de la section offre billeterie -->
 
 
-    <!-- Création de la section partenaires -->
-
-
-    <div class="nos-partenaires">
-      <h1>Dernières offres de la billeterie</h1>
+    <div class="offre-billeterie">
+      <h1>Voici nos partenaires !</h1>
 
       <?php
       $statement = $pdo->prepare($sql);
       $statement->execute();
       $offres = $statement->fetchAll();
-      foreach ($offres as $offre) {
-        $query = "SELECT * FROM `offre_image` INNER JOIN `image` ON  `offre_image`.Id_Image = `image`.Id_Image  WHERE `offre_image`.Id_Offre = ?";
+      foreach ($partenaires as $partenaire) {
+        $query = "SELECT * FROM `partenaire_image` INNER JOIN `image` ON  `partenaire_image`.Id_Image = `image`.Id_Image  WHERE `partenaire_image`.Id_Offre = ?";
         $get_all_image = $pdo->prepare($query);
         $get_all_image->execute([$offre['Id_Offre']]);
         $images = $get_all_image->fetchAll();
@@ -42,7 +39,7 @@
       ?>
 
 
-        <div class="offre">
+        <div class="partenaire">
           <div class="haut-de-page">
             <div class="btn-offre">
               <p><?= $offre['Nom_Offre']; ?></p>
@@ -68,7 +65,8 @@
 
   </section>
   </div>
-  </section>
-  </div>
+
+
 </body>
+
 </html>

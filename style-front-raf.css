@@ -726,7 +726,28 @@ footer h4{
 }
 
 
+.nos-partenaires{
 
+    font-family: 'Montserrat';        
+    font-style: normal;
+    font-weight: 400;
+     font-size: 30px;
+    line-height: 37px;
+    color: #000000;
+     margin: 20px 0;
+    
+
+}
+
+.partenaire{
+    
+    display: flex;
+    flex-direction: column;
+    background: #EFEDED;
+    margin-bottom: 20px;
+    padding: 10px;
+
+}
 
 
 
