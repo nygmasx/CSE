@@ -540,9 +540,8 @@ body{
 
 .btn-offre{
     background-color: #1B3168;
-    width: 146px;
+    padding: 4px 15px;
     border-radius: 7px;
-    height: 22px;
     margin: auto 5px;
     position: relative;
     margin-left: 15px;
