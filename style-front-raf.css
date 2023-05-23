@@ -724,3 +724,83 @@ footer h4{
     width: 95%;
     gap: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:950px){
+    .fond_logo{
+        display:none;
+    }
+    .navbar_elements {
+        margin-left: 0;
+        text-align: center;
+        list-style: none;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        background: #1B3168;
+        z-index: 10;
+        text-decoration: none;
+        display: flex;
+        justify-content:center;
+
+}
+
+    .info{
+        display:none;
+    }
+}
+
+@media screen and (max-width:733px){
+    .footerraccourci {
+        flex-direction: column;
+        display: flex;
+        color: #FFFFFF;
+        font-size: 17px;
+        padding-top: 12px;
+        gap:0px;
+    }
+}
+
+
+@media screen and (max-width:616px){
+    .navbar_elements {
+        display:none;
+    }
+}
+
+@media screen and (max-width:628px){
+    .btn-offre{
+        margin-left:0;
+    }
+}
+
+@media screen and (max-width:528px){
+    .footerimg {
+        display:none;
+    }
+
+    footer{
+        justify-content:center;
+    }
+}
+
+
