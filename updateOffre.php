@@ -39,10 +39,10 @@ if (isset($_POST['submit'])) {
         </script>
         <?php
     } else {
-        $query = "UPDATE `offre` SET `Nom_Offre` = ?,`Description_Offre` = ?,`Date_Debut_Offre` = ? ,`Date_Fin_Offre` = ?,`Nombre_Place_Min_Offre` = ?,`Id_Partenaire` = ?";
+        $query = "UPDATE `offre` SET `Nom_Offre` = ?,`Description_Offre` = ?,`Date_Debut_Offre` = ? ,`Date_Fin_Offre` = ?,`Nombre_Place_Min_Offre` = ?,`Id_Partenaire` = ? WHERE `Id_Offre` = ?";
 
         $query = $pdo->prepare($query);
-        $query->execute([$nom, $description, $date, $date2, $nbplace, $partenaire]);
+        $query->execute([$nom, $description, $date, $date2, $nbplace, $partenaire, $id]);
 
 
         if (count($_FILES['image']['tmp_name']) > 0){
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
                 $sql->execute();
 
             }
-            header("Location: billeterie.php");
+            header("Location: back-billeterie.php");
         }
 
     }
@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
         <ul class="menu">
         <li><a href="backoffice.php">Accueil</a></li>
             <li><a href="partenariats.php">Partenariats</a></li>
-            <li><a href="billeterie.php">Billeterie</a></li>
+            <li><a href="back-billeterie.php">Billeterie</a></li>
             <li><a href="commentaires.php">Contact</a></li>
             <li><a href="administrateurs.php">Administrateurs</a></li>
         </ul>
