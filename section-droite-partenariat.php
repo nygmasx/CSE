@@ -47,7 +47,7 @@
 
             <div class="info-partenaire">
                  <div class="nom-partenaire">  
-                    <p><?= $partenaire['Nom_Partenaire']; ?> </p>
+                    <h3><?= $partenaire['Nom_Partenaire']; ?> </h3>
                 </div>
                 <div class="contenu-partenaire"> 
                      <p><?= $partenaire['Description_Partenaire'] ?></p>

@@ -822,19 +822,35 @@ footer h4{
 
 }
 
+.détail-partenaire{
+    margin-top: 40px;
+}
+
 .image-partenaire{
     width: 20%;
     height: 100%;
+    
+    
 }
 
 .image-partenaire img{
     width:100%;
+    
 
 }
 
 .nom-partenaire{
     justify-content: center;
     margin: auto 5px;
+}
+
+.contenu-partenaire{
+    margin: auto 5px;
+    padding-top: 4px;
+}
+
+.info-partenaire{
+    margin-left:10px;
 }
 
 .partenariat h1{
