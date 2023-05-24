@@ -80,6 +80,8 @@
 
                         <textarea name="message" placeholder="Entrez votre message." required></textarea>
 
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAFLa8vY1BXDCBU2" data-callback="javascriptCallback"></div>
+
                         <button name="submit" type="submit">Envoyer</button>
                     </form>
                 </div>
@@ -87,12 +89,16 @@
         </section>
     </div>
 </main>
-</body>
-
-  </section>
-  </div>
-
-
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer>
+    window.onloadTurnstileCallback = function () {
+    turnstile.render('#example-container', {
+        sitekey: '0x4AAAAAAAFLa8vY1BXDCBU2',
+        callback: function(token) {
+            console.log(`Challenge Success ${token}`);
+        },
+    });
+};
+</script>
 </body>
 
 </html>
