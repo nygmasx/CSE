@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
 <div class="ajout">
     <h1>Modifier une Offre</h1>
 
-    <div class="form">
+    <div class="form"> 
         <form action="" method="post" enctype="multipart/form-data">
             <div class="ligne">
 

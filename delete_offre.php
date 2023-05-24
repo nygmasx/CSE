@@ -15,9 +15,9 @@ if (isset($id)) {
             $sql = "DELETE o, i FROM offre i INNER JOIN offre_image o ON o.Id_Offre = i.Id_Offre WHERE o.Id_Offre = ?";
             $statement = $pdo->prepare($sql);
             $statement->execute([(int)$id]);
-            header("Location: billeterie.php");
+            header("Location: back-billeterie.php");
         }catch(Exception $e){
-            header("Location: billeterie.php");
+            header("Location: back-billeterie.php");
         }
     } else {
         ?>
