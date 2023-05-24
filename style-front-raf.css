@@ -887,9 +887,13 @@ footer h4{
     }
 }
 
-@media screen and (max-width:728px){
-    .btn-offre {
-       
+@media screen and (max-width:729px){
+    .haut-de-page {
+        justify-content: center;
+    }
+
+    .date-offre{
+        padding-top: 5px;
     }
 }
 
