@@ -11,13 +11,20 @@ if (isset($id)) {
     $offre = $part->fetch(PDO::FETCH_OBJ);
     if ($offre) {
         try {
+            $sql2 = "DELETE FROM `message` WHERE `Id_Offre` = ?";
+            $statement = $pdo->prepare($sql2);
+            $statement->execute([(int)$id]);
 
-            $sql = "DELETE o, i FROM offre i INNER JOIN offre_image o ON o.Id_Offre = i.Id_Offre WHERE o.Id_Offre = ?";
+            $sql2 = "DELETE FROM `offre_image` WHERE `Id_Offre` = ?";
+            $statement = $pdo->prepare($sql2);
+            $statement->execute([(int)$id]);
+
+            $sql = "DELETE FROM offre WHERE Id_Offre = ?";
             $statement = $pdo->prepare($sql);
             $statement->execute([(int)$id]);
             header("Location: back-billeterie.php");
         }catch(Exception $e){
-            header("Location: back-billeterie.php");
+            echo $e;
         }
     } else {
         ?>
