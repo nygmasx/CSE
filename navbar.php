@@ -14,7 +14,6 @@
 
     <div class="fond_logo">
         <img src="assets/img/logosv.png" alt="Logo du lycée Saint Vincent">
-
     </div>
     </section>
     <section class="fond_bleu">
