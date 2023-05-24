@@ -1,3 +1,19 @@
+<?php
+require_once "db.php";
+$sql = "SELECT * FROM `info_accueil`";
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$infos = $statement->fetch();
+
+
+
+$sql = "SELECT * FROM `partenaire` INNER JOIN `image` ON `partenaire`.`Id_Image` = `image`.`Id_Image` ORDER BY RAND() LIMIT 3";
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$partenaires = $statement->fetchAll();
+?>
+
+
 <head> 
 <script defer src='index.js'></script>
 </head>
@@ -37,16 +53,16 @@
     </div>
     <div class="info1">
       <img src="assets/img/chevron.png" alt="icone de chevron">
-      <p>Par téléphone : <a href="tel:+33 3 03 03 03 03"><span>+33303030303</span></a></p>
+      <p>Par téléphone : <a href="tel:+33 <?= $infos['Num_Tel_Info_Accueil'] ?>"><span>+33<?= $infos['Num_Tel_Info_Accueil'] ?></span></a></p>
     </div>
     <div class="info2">
       <img src="assets/img/chevron.png" alt="icone de chevron">
-      <p> Par mail: <a href="mailto:cse@lyceestvincent.fr"><span>cse@lyceestvincent.fr</span></a> </p>
+      <p> Par mail: <a href="mailto:<?= $infos['Email_Info_Accueil'] ?>"><span><?= $infos['Email_Info_Accueil'] ?></span></a> </p>
     </div>
 
     <div class="info3">
       <img src="assets/img/chevron.png" alt="icone de chevron">
-      <p>Au lycée : <span> Bureau du CSE <br>(1er étage bâtiment Saint-Vincent)</span></p>
+      <p><?= $infos['Emplacement_Bureau_Info_Accueil'] ?></p>
     </div>
 
     <!-- Création de la section partenaires -->

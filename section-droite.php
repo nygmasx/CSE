@@ -33,6 +33,7 @@
       <h1>Dernières offres de la billeterie</h1>
 
       <?php
+      $sql = "SELECT * FROM offre";
       $statement = $pdo->prepare($sql);
       $statement->execute();
       $offres = $statement->fetchAll();

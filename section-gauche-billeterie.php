@@ -53,16 +53,16 @@ $partenaires = $statement->fetchAll();
     </div>
     <div class="info1">
       <img src="assets/img/chevron.png" alt="icone de chevron">
-      <p>Par téléphone : <a href="tel:+33 3 03 03 03 03"><span>+33<?= $infos['Num_Tel_Info_Accueil'] ?></span></a></p>
+      <p>Par téléphone : <a href="tel:+33 <?= $infos['Num_Tel_Info_Accueil'] ?>"><span>+33<?= $infos['Num_Tel_Info_Accueil'] ?></span></a></p>
     </div>
     <div class="info2">
       <img src="assets/img/chevron.png" alt="icone de chevron">
-      <p> Par mail: <a href="mailto:cse@lyceestvincent.fr"><span>cse@lyceestvincent.fr</span></a> </p>
+      <p> Par mail: <a href="mailto:<?= $infos['Email_Info_Accueil'] ?>"><span><?= $infos['Email_Info_Accueil'] ?></span></a> </p>
     </div>
 
     <div class="info3">
       <img src="assets/img/chevron.png" alt="icone de chevron">
-      <p>Au lycée : <span> Bureau du CSE <br>(1er étage bâtiment Saint-Vincent)</span></p>
+      <p><?= $infos['Emplacement_Bureau_Info_Accueil'] ?></p>
     </div>
 
     <!-- Création de la section partenaires -->
