@@ -1,6 +1,6 @@
 <?php
 require_once "db.php";
-$sql = "SELECT * FROM `offre`";
+$sql = "SELECT * FROM `offre` ORDER BY Id_Offre DESC LIMIT 3";
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $offres = $statement->fetchAll();

@@ -30,10 +30,10 @@
       $statement->execute();
       $offres = $statement->fetchAll();
       foreach ($partenaires as $partenaire) {
-        $query = "SELECT * FROM `partenaire_image` INNER JOIN `image` ON  `partenaire_image`.Id_Image = `image`.Id_Image  WHERE `partenaire_image`.Id_Offre = ?";
+        $query = "SELECT * FROM `image` INNER JOIN `partenaire` ON  `image`.Id_Image = `partenaire`.Id_Image  WHERE `partenaire`.Id_Partenaire = ?";
         $get_all_image = $pdo->prepare($query);
         $get_all_image->execute([$partenaire['Id_Partenaire']]);
-        $images = $get_all_image->fetchAll();
+        $images = $get_all_image->fetch();
 
 
       ?>
@@ -41,7 +41,7 @@
 
         <div class="partenaire">
             <div class="image-partenaire">
-                
+                <img src="assets/<?= $images['Nom_Image'] ?>">
             </div>
 
             <div class="info-partenaire">

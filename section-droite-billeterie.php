@@ -51,6 +51,7 @@
               <p>Offre valable du <?= $offre['Date_Debut_Offre']; ?> au <?= $offre['Date_Fin_Offre']; ?> </p>
             </div>
           </div>
+          
           <div class="contenu-offre">
             <p><?= $offre['Description_Offre'] ?></p>
           </div>

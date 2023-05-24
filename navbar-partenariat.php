@@ -40,5 +40,57 @@
         </ul>
     </nav>
 
+    <div class="sideNavBackground">
+                <div id="mySidenav" class="sidenav">
+                    <a id="closeBtn" href="#" class="close">×</a>
+                    <ul>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="partenariat.php">Partenariat</a></li>
+                        <li><a href="billeterie.php">Billeterie</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                    </ul>
+            </div>
+            </div>
+            <div class="div-menu-burger">
+                <a href="#" id="openBtn">
+                    <span class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </a>
+            </div>
+        </nav>
+
+
+        <script>
+            var bgsidenav = document.getElementsByClassName("sideNavBackground")[0];
+            var sidenav = document.getElementById("mySidenav");
+            var openBtn = document.getElementById("openBtn");
+            var closeBtn = document.getElementById("closeBtn");
+            setInterval(function(){
+            if(sidenav.classList.contains("active")){          
+                document.body.onclick = closeNav;
+            }}, 5);
+            
+            openBtn.onclick = openNav;
+            closeBtn.onclick = closeNav;
+
+            /* Set the width of the side navigation to 250px */
+            function openNav() {
+                sidenav.classList.add("active");
+            }
+
+            /* Set the width of the side navigation to 0 */
+            function closeNav() {
+                sidenav.classList.remove("active");
+                setTimeout(function(){
+                    location.reload(true);
+                },500);
+            }
+
+            
+        </script>
+
     </section>
 </header>
