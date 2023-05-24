@@ -40,6 +40,7 @@
 
 
         <div class="partenaire">
+          <div class="détail-partenaire" style="display:flex";>
             <div class="image-partenaire">
                 <img src="assets/<?= $images['Nom_Image'] ?>">
             </div>
@@ -48,10 +49,12 @@
                  <div class="nom-partenaire">  
                     <p><?= $partenaire['Nom_Partenaire']; ?> </p>
                 </div>
-                <div class="contenu-partenaire"> contenu offre
+                <div class="contenu-partenaire"> 
                      <p><?= $partenaire['Description_Partenaire'] ?></p>
                 </div>
-          </div>
+            </div>
+           </div>
+        
           
           <form action="partenariat.php" method="get">
             <input type="hidden" name="Id_Partenaire" value="<?= $partenaire['Id_Partenaire'] ?>">

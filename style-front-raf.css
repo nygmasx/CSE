@@ -797,6 +797,8 @@ footer h4{
 }
 
 
+
+
 .nos-partenaires{
 
     font-family: 'Montserrat';        
@@ -817,6 +819,16 @@ footer h4{
     background: #EFEDED;
     margin-bottom: 20px;
     padding: 10px;
+
+}
+
+.image-partenaire{
+    width: 20%;
+    height: 100%;
+}
+
+.image-partenaire img{
+    width:100%;
 
 }
 
