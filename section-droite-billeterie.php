@@ -54,7 +54,7 @@
           <div class="contenu-offre">
             <p><?= $offre['Description_Offre'] ?></p>
           </div>
-          <form action="index.php" method="get">
+          <form action="billeterie.php" method="get">
             <input type="hidden" name="Idoffre" value="<?= $offre['Id_Offre'] ?>">
             <button type="submit" class="en-savoir-plus" data-target="#modal1">
               <p><span>EN SAVOIR PLUS</span></p>
