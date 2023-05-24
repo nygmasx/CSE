@@ -70,11 +70,25 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <div class="inputGroup">
                 <input type="password" id="password" required="" name="password" placeholder="Mot de passe">
             </div>
+
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAFLa8vY1BXDCBU2" data-callback="javascriptCallback"></div>
+
+
             <div class="btnGroup">
                 <button type="submit">Se connecter</button>
             </div>
         </div>
     </form>
 </div>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer>
+    window.onloadTurnstileCallback = function () {
+    turnstile.render('#example-container', {
+        sitekey: '0x4AAAAAAAFLa8vY1BXDCBU2',
+        callback: function(token) {
+            console.log(`Challenge Success ${token}`);
+        },
+    });
+};
+</script>
 </body>
 </html>
