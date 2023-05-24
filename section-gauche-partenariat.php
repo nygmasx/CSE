@@ -60,7 +60,8 @@
             <div class="fleche-gauche"><img src="assets/img/chevron.png"></div>
                 <div class="contenant-image-slider">
                   <img src="assets/img/leonidas.png" class="slide-image 1" alt="">
-                        <img src="assets/img/franprix.jpg" class="slide-image 2" alt="">
+                    <img src="assets/img/renault.png" class="slide-image 2" alt="Logo de Renault">
+                            <img src="assets/img/astérix.jpg" class="slide-image 3" alt="Logo d'Astérix">
                                     </div>
                                     <div class="fleche-droite"><img src="assets/img/chevron.png"></div>
                                 </div>
