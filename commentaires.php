@@ -30,6 +30,10 @@ include "header.php";
                 <?php
                 require_once "db.php";
                 $sql = "SELECT * FROM `message`";
+                if (isset($_GET['searchbar']) && !empty($_GET['searchbar'])) {
+                    $recherche = htmlspecialchars($_GET['searchbar']);
+                    $sql .= " WHERE Nom_Message LIKE '%$recherche%'";
+                }
                 $statement = $pdo->prepare($sql);
                 $statement->execute();
                 $messages = $statement->fetchAll();

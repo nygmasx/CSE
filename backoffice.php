@@ -22,17 +22,15 @@ switch ($_SESSION['user']->Id_Droit) {
             $statement->execute();
             $utilisateurs = $statement->fetchAll();
             //var_dump($_SESSION["user"]);
-            foreach ($utilisateurs as $utilisateur){
+            
             ?>
 			<div class="boardcard">
 				<h2>Bonjour, <span style="color: #B6A886;"><?= $_SESSION['user']->Prenom_Utilisateur ?></span></h2> <br><br>
 				<h3>Rôle : <?= $user ?></h3>
 				<br>
+                <div class = "btn"><button><a href="aside.php"> Modifier l'Accueil</a></button></div>
+                
 			</div>
-            <?php
-
-            }
-            ?>
 		</div>
 	</main>
 
