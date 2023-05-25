@@ -5,12 +5,6 @@ $statement = $pdo->prepare($sql);
 $statement->execute();
 $infos = $statement->fetch();
 
-
-
-$sql = "SELECT * FROM `partenaire` INNER JOIN `image` ON `partenaire`.`Id_Image` = `image`.`Id_Image` ORDER BY RAND() LIMIT 3";
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$partenaires = $statement->fetchAll();
 ?>
 
 <head> 

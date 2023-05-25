@@ -25,6 +25,10 @@ include "db.php";?>
         <?php
         require_once "db.php";
         $sql = "SELECT * FROM `partenaire`";
+		if (isset($_GET['searchbar']) && !empty($_GET['searchbar'])) {
+			$recherche = htmlspecialchars($_GET['searchbar']);
+			$sql .= " WHERE Nom_Partenaire LIKE '%$recherche%'";
+		}
         $statement = $pdo->prepare($sql);
         $statement->execute();
         $partenaires = $statement->fetchAll();
