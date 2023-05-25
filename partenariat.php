@@ -26,7 +26,7 @@ if (isset($_GET['Id_Partenaire'])) {
 
   $query = "SELECT * FROM `partenaire` WHERE `Id_Partenaire` = ?";
   $statement = $pdo->prepare($query);
-  $statement->execute([$partenaire['Id_Partenaire']]);
+  $statement->execute([$_GET['Id_Partenaire']]);
   $partenaire = $statement->fetch();
 
 ?>
